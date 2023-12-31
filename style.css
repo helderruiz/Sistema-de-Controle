@@ -19,10 +19,32 @@
     flex-direction: column;
     align-items: center;
   }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 10px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  img {
+    width: 30px;
+    border-radius: 50%;
+  }
+
+  /* .img__nove {
+    width: 40px;
+  } */
   
   .container {
     display: flex;
-    padding: 10px 0;
+    padding-bottom: 10px;
     gap: 40px;
     width: 100%;
     justify-content: center;
@@ -47,9 +69,22 @@
     padding: 10px;
     width: 150px;
   }
+
+  .entrada {
+    color: #0c9200;
+  }
+
+  .saida {
+    color: #d20000;
+  }
+
+  .total {
+    color: #0c9200;
+    font-weight: bold;
+  }
   
   
-  .descricao, .valor, .tipo {
+  .descricao, .valor, .tipo, .km__rodado {
     display: flex;
     flex-direction: column;
   }

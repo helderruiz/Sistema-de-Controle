@@ -11,20 +11,32 @@
 <body>
     
     <main>
+        <header>
+            <h1>Sistema de Controle</h1>
+            <div>
+                <img src="img/uber.png" alt="">
+                <img class="img__nove" src="img/99.jpeg" alt="">
+            </div>
+        </header>
         <div class="container">
             <div>
-                Entradas: R$
+                Valor Bruto: R$
                 <span class="entrada">0.00</span>
             </div>
 
             <div>
-                Saídas: R$
+                Valor Gasto: R$
                 <span class="saida">0.00</span>
             </div>
 
             <div>
-                Total: R$
+                Valor Líquido: R$
                 <span class="total">0.00</span>
+            </div>
+
+            <div>
+                Total de Km: 
+                <span class="km">0000</span>
             </div>
         </div>
 
@@ -37,6 +49,11 @@
             <div class="valor">
                 <label for="val">Valor</label>
                 <input type="number" id="val">
+            </div>
+
+            <div class="km__rodado">
+                <label for="kms">Km Rodado</label>
+                <input type="number" id="kms">
             </div>
 
             <div class="tipo">
@@ -55,6 +72,7 @@
                     <tr>
                         <th>Descrição</th>
                         <th class="tabela-valor">Valor</th>
+                        <th class="tebela-km">Km </th>
                         <th class="tabela-tipo">Tipo</th>
                         <th class="tabela-acao"></th>
                     </tr>

@@ -3,11 +3,12 @@ const inputDescricao = document.querySelector('#desc')
 const inputValor = document.querySelector('#val')
 const selectTipo = document.querySelector('#tip')
 const btnIncluir = document.querySelector('#btn-incluir')
+const inputKm = document.querySelector('#kms')
 
 const entrada = document.querySelector('.entrada')
 const saida = document.querySelector('.saida')
 const total = document.querySelector('.total')
-
+const km = document.querySelector('.km')
 
 let items
 
@@ -18,6 +19,7 @@ btnIncluir.onclick = () =>{
     items.push({
         desc: inputDescricao.value,
         val: Math.abs(inputValor.value).toFixed(2),
+        kms: Math.abs(inputKm.value).toFixed(2),
         tip: selectTipo.value,
     })
 
@@ -27,10 +29,10 @@ btnIncluir.onclick = () =>{
 
     inputDescricao.value = ''
     inputValor.value = ''
+    inputKm.value = ''
+
 
 }
-
-
 
 function deleteItem(index) {  
     items.splice(index, 1)
@@ -44,6 +46,7 @@ function insertItem(item, index) {
     tr.innerHTML = `
     <td>${item.desc}</td>
     <td>${item.val}</td>
+    <td>${item.kms}</td>
     <td class="tabela-tipo">${item.tip === "Entrada"
         ? '<i class="bx bxs-chevron-up-circle"></i>'
         : '<i class="bx bxs-chevron-down-circle"></i>'
@@ -70,26 +73,28 @@ function getTotals() {
     const novaEntrada = items
     .filter((item) => item.tip ==="Entrada")
     .map((transaction) => Number(transaction.val))
-    console.log(novaEntrada)
+    // console.log(novaEntrada)
 
     const novaSaida = items
     .filter((item) => item.tip ==="Saída")
     .map((transaction) => Number(transaction.val))
-    console.log(novaSaida)
+    // console.log(novaSaida)
 
     const totalEntrada = novaEntrada
-    .reduce((acc, cur) => acc + cur, 0)
-    .toFixed(2)
+    .reduce((acc, cur) => acc + cur, 0).toFixed(2)
 
     const totalSaida = Math.abs(
         novaSaida.reduce((acc, cur) => acc + cur, 0)
     ).toFixed(2)
 
     const totalItemsValor = (totalEntrada - totalSaida).toFixed(2)
-    console.log(totalItemsValor)
+
+    const totalKmRodados = (parseInt(km) + parseInt(inputKm))
+    console.log(typeof(km))
 
     entrada.innerHTML = totalEntrada
     saida.innerHTML = totalSaida
+    parseInt(km).innerHTML = totalKmRodados
     total.innerHTML = totalItemsValor
 }
 
