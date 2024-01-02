@@ -19,7 +19,7 @@ btnIncluir.onclick = () =>{
     items.push({
         desc: inputDescricao.value,
         val: Math.abs(inputValor.value).toFixed(2),
-        kms: Math.abs(inputKm.value).toFixed(2),
+        kms: Math.abs(inputKm.value),
         tip: selectTipo.value,
     })
 
@@ -44,7 +44,7 @@ function insertItem(item, index) {
     let tr = document.createElement('tr')
 
     tr.innerHTML = `
-    <td>${item.desc}</td>
+    <td class="td-desc">${item.desc}</td>
     <td>${item.val}</td>
     <td>${item.kms}</td>
     <td class="tabela-tipo">${item.tip === "Entrada"
@@ -81,21 +81,24 @@ function getTotals() {
     // console.log(novaSaida)
 
     const totalEntrada = novaEntrada
-    .reduce((acc, cur) => acc + cur, 0).toFixed(2)
+    .reduce((acc, cur) => acc + cur, 0)
+    .toFixed(2)
 
     const totalSaida = Math.abs(
         novaSaida.reduce((acc, cur) => acc + cur, 0)
     ).toFixed(2)
 
     const totalItemsValor = (totalEntrada - totalSaida).toFixed(2)
+    // console.log(totalItemsValor)
 
-    const totalKmRodados = (parseInt(km) + parseInt(inputKm))
-    console.log(typeof(km))
+    const totalKmRodados = items.reduce((accumulator, km) => accumulator + km["kms"], 0)
 
     entrada.innerHTML = totalEntrada
     saida.innerHTML = totalSaida
-    parseInt(km).innerHTML = totalKmRodados
     total.innerHTML = totalItemsValor
+    km.innerHTML = totalKmRodados
+
+    
 }
 
 const getItensBD = () => JSON.parse(localStorage.getItem('db_items')) ?? []

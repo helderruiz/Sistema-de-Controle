@@ -82,11 +82,16 @@
     color: #0c9200;
     font-weight: bold;
   }
+
+  .km {
+    color: blue;
+  }
   
   
   .descricao, .valor, .tipo, .km__rodado {
     display: flex;
     flex-direction: column;
+    
   }
 
   .novo-item {
@@ -112,6 +117,8 @@
   
   input, select {
     padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
   }
   
   .tabela {
@@ -127,9 +134,18 @@
   }
   
   th {
-    text-align: start;
+    text-align: center;
     border-bottom: inset;
     padding-bottom: 5px;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  .td-desc {
+    text-align: start;
+    color: #003477;
   }
   
   i {
@@ -142,6 +158,10 @@
   
   .bxs-chevron-down-circle {
     color: #D83121;
+  }
+
+  .bx-trash{
+    color: #dc0000;
   }
   
   .tabela-acao {
@@ -162,3 +182,5 @@
     width: 80px;
     text-align: center;
   }
+
+  
