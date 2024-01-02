@@ -145,6 +145,7 @@
 
   .td-desc {
     text-align: start;
+    text-transform: capitalize;
     color: #003477;
   }
   
