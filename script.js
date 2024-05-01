@@ -3,12 +3,12 @@ const inputDescricao = document.querySelector('#desc')
 const inputValor = document.querySelector('#val')
 const selectTipo = document.querySelector('#tip')
 const btnIncluir = document.querySelector('#btn-incluir')
-const inputKm = document.querySelector('#kms')
+// const inputKm = document.querySelector('#kms')
 
 const entrada = document.querySelector('.entrada')
 const saida = document.querySelector('.saida')
 const total = document.querySelector('.total')
-const km = document.querySelector('.km')
+// const km = document.querySelector('.km')
 
 let items
 
@@ -19,7 +19,7 @@ btnIncluir.onclick = () =>{
     items.push({
         desc: inputDescricao.value,
         val: Math.abs(inputValor.value).toFixed(2),
-        kms: Math.abs(inputKm.value),
+        // kms: Math.abs(inputKm.value),
         tip: selectTipo.value,
     })
 
@@ -46,7 +46,6 @@ function insertItem(item, index) {
     tr.innerHTML = `
     <td class="td-desc">${item.desc}</td>
     <td>${item.val}</td>
-    <td>${item.kms}</td>
     <td class="tabela-tipo">${item.tip === "Entrada"
         ? '<i class="bx bxs-chevron-up-circle"></i>'
         : '<i class="bx bxs-chevron-down-circle"></i>'
@@ -91,12 +90,12 @@ function getTotals() {
     const totalItemsValor = (totalEntrada - totalSaida).toFixed(2)
     // console.log(totalItemsValor)
 
-    const totalKmRodados = items.reduce((accumulator, km) => accumulator + km["kms"], 0)
+    // const totalKmRodados = items.reduce((accumulator, km) => accumulator + km["kms"], 0)
 
     entrada.innerHTML = totalEntrada
     saida.innerHTML = totalSaida
     total.innerHTML = totalItemsValor
-    km.innerHTML = totalKmRodados
+    // km.innerHTML = totalKmRodados
 
     
 }
