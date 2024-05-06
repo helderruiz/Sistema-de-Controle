@@ -1,87 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sistema de Controle</title>
     <!-- IMPORTANDO ICONS -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <main>
-        <header>
-            <h1>Sistema de Controle</h1>
-        </header>
-        <div class="container">
-            <div>
-                Valor Bruto: R$
-                <span class="entrada">0.00</span>
-            </div>
+      <header>
+        <h1>Sistema de Controle</h1>
+      </header>
+      <div class="container">
+        <div>
+          Valor Bruto: R$
+          <span class="entrada">0.00</span>
+        </div>
 
-            <div>
-                Valor Gasto: R$
-                <span class="saida">0.00</span>
-            </div>
+        <div>
+          Valor Gasto: R$
+          <span class="saida">0.00</span>
+        </div>
 
-            <div>
-                Valor Líquido: R$
-                <span class="total">0.00</span>
-            </div>
+        <div>
+          Valor Líquido: R$
+          <span class="total">0.00</span>
+        </div>
 
-            <!-- <div>
+        <!-- <div>
                 Total de Km: 
                 <span class="km">0000</span>
             </div> -->
+      </div>
+
+      <div class="novo-item">
+        <div class="descricao">
+          <label for="desc">Descrição</label>
+          <input
+            type="text"
+            id="desc"
+            placeholder="ex: Dia 2 Ganhos, ou Gasolina"
+          />
         </div>
 
-        <div class="novo-item">
-            <div class="descricao">
-                <label for="desc">Descrição</label>
-                <input type="text" id="desc" placeholder="ex: Dia 2 Ganhos, ou Gasolina">
-            </div>
+        <div class="valor">
+          <label for="val">Valor R$</label>
+          <input type="number" id="val" placeholder="ex: 150.90" />
+        </div>
 
-            <div class="valor">
-                <label for="val">Valor R$</label>
-                <input type="number" id="val" placeholder="ex: 150.90">
-            </div>
-
-            <!-- <div class="km__rodado">
+        <!-- <div class="km__rodado">
                 <label for="kms">Km Rodado</label>
                 <input type="number" id="kms" placeholder="ex: 250">
             </div> -->
 
-            <div class="tipo">
-                <label for="tip">Escolha o Tipo</label>
-                <select id="tip">
-                    <option>Entrada</option>
-                    <option>Saída</option>
-                </select>
-            </div>
-            <button id="btn-incluir">Incluir</button>
+        <div class="tipo">
+          <label for="tip">Escolha o Tipo</label>
+          <select id="tip">
+            <option>Entrada</option>
+            <option>Saída</option>
+          </select>
         </div>
+        <button id="btn-incluir">Incluir</button>
+      </div>
 
-        <div class="tabela">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Descrição</th>
-                        <th class="tabela-valor">Valor</th>
-                        <!-- <th class="tebela-km">Km </th> -->
-                        <th class="tabela-tipo">Tipo</th>
-                        <th class="tabela-acao"></th>
-                    </tr>
-                </thead>
+      <div class="tabela">
+        <table>
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th class="tabela-valor">Valor</th>
+              <!-- <th class="tebela-km">Km </th> -->
+              <th class="tabela-tipo">Tipo</th>
+              <th class="tabela-acao"></th>
+            </tr>
+          </thead>
 
-                <tbody>
-
-                </tbody>
-
-            </table>
-        </div>
+          <tbody></tbody>
+        </table>
+      </div>
     </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
